@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moxie Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- =========================
+       Navigation
+  ========================== -->
+  <nav aria-label="Primary">
+    <div class="container nav-container">
+      <div class="logo">Moxie</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button id="theme-toggle" title="Toggle dark mode">🌙</button>
+        <div id="menu-btn">☰</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================
+       Hero Section
+  ========================== -->
+  <main id="top">
+    <section id="hero" class="fade-in">
+      <div class="container hero-container">
+        <h1 id="greeting">Hello, I'm Moxie (Ojo Oluwadamilare Samuel)</h1>
+        <p id="tagline">Building tomorrow's apps with today's curiosity</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">Explore Projects</a>
+          <a href="assets/resume.pdf" download class="btn-secondary">Download Resume</a>
+        </div>
+        <img src="assets/images/profilee.jpg" alt="Moxie Profile" class="profile-img">
+      </div>
+    </section>
+
+    <!-- =========================
+         About Section
+    ========================== -->
+    <section id="about" class="fade-in">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>This is a project summary for my SIWES internship. I’m an intern at <a href="https://www.vesti.ai" target="_blank" rel="noopener">Vesti AI</a>, building Flutter apps and learning real-world software development.</p>
+
+        <h3>My Journey So Far ✅</h3>
+        <ul>
+          <li>2022: Started Programming</li>
+          <li>Sept 2022: Started Computer Engineering</li>
+          <li>March 2023: First Mobile App</li>
+          <li>Aug 2023: Flutter Discovery</li>
+          <li>Present 2025: Advanced Goals</li>
+        </ul>
+
+        <h3>Values & Approach</h3>
+        <p>User-centered design, clean code, continuous learning, collaborative problem-solving</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         Projects Section
+    ========================== -->
+    <section id="projects" class="fade-in">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-container">
+          <div class="project-card" data-title="Flutter App">
+            <h3>Flutter App</h3>
+            <p>Click to see media & README</p>
+          </div>
+          <div class="project-card" data-title="Web App">
+            <h3>Web App</h3>
+            <p>Click to see media & README</p>
+          </div>
+          <div class="project-card" data-title="Portfolio Website">
+            <h3>Portfolio Website</h3>
+            <p>Click to see media & README</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Project Modal
+    ========================== -->
+    <div id="project-demo">
+      <div class="modal-content">
+        <button id="close-demo">&times;</button>
+        <h3 id="demo-title"></h3>
+        <p id="demo-desc"></p>
+        <div id="demo-media"></div>
+      </div>
+    </div>
+
+    <!-- =========================
+         FAQ Section
+    ========================== -->
+    <section id="faq" class="fade-in">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details><summary>Do you use frameworks?</summary><p>When needed. HTML/CSS/JS first, frameworks if helpful.</p></details>
+        <details><summary>Are you available for collaboration?</summary><p>Yes, if the project is interesting and useful.</p></details>
+        <details><summary>How do you deploy?</summary><p>Netlify, Vercel, GitHub Pages depending on project.</p></details>
+      </div>
+    </section>
+
+    <!-- =========================
+         Contact Section
+    ========================== -->
+    <section id="contact" class="fade-in">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:moxie@example.com">moxie@example.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">+1234567890</a></p>
+        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="#">linkedin.com/in/moxie</a></p>
+        <p><i class="fab fa-github"></i> GitHub: <a href="#">github.com/moxie-15</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Moxie. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
