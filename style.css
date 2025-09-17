@@ -94,7 +94,7 @@ nav {
   min-height: 100vh;
   text-align: center;
   padding-top: 120px;
-  gap: 1.5rem; /* spacing between heading, tagline, buttons, image */
+  gap: 1.5rem;
 }
 
 .hero-container h1 {
@@ -110,10 +110,10 @@ nav {
 
 .hero-buttons {
   display: flex;
-  gap: 1rem; 
-  flex-wrap: wrap; 
+  gap: 1rem;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2rem; /* space before profile image */
+  margin-bottom: 2rem;
 }
 
 .btn-primary, .btn-secondary {
@@ -143,8 +143,8 @@ nav {
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   box-shadow: 0 0 20px #ffa500;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -155,20 +155,9 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  #hero {
-    padding-top: 100px;
-    gap: 1.5rem;
-  }
-
-  .profile-img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+  #hero { padding-top: 100px; gap: 1.5rem; }
+  .profile-img { width: 150px; height: 150px; }
+  .hero-buttons { flex-direction: column; gap: 0.75rem; }
 }
 
 /* =========================
@@ -187,6 +176,7 @@ nav {
   justify-content: center;
   margin: 3rem 0;
 }
+
 .project-card {
   background: inherit;
   border: 2px solid #ffa500;
@@ -195,11 +185,33 @@ nav {
   width: 300px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 .project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #ffa500;
 }
+
+/* Project Images */
+.project-card img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.project-card img:hover { transform: scale(1.05); }
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: bold;
+}
+.project-card a:hover { text-decoration: underline; }
 
 /* =========================
    Project Modal
@@ -226,8 +238,26 @@ nav {
   position: relative;
 }
 body.dark #project-demo .modal-content { background: #222; }
-#project-demo img, #project-demo video { max-width: 100%; margin: 1rem 0; border-radius: 0.5rem; }
-#close-demo { position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #ffa500; }
+
+#project-demo img,
+#project-demo video {
+  max-width: 100%;
+  max-height: 80vh;       /* Portrait-safe */
+  object-fit: contain;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+#close-demo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ffa500;
+}
 
 /* =========================
    Contact Section
@@ -259,3 +289,78 @@ body.dark footer {
   100% { opacity: 1; transform: translateY(0);}
 }
 .fade-in.show { animation: fadeInUp 0.7s ease forwards; }
+
+/* =========================
+   Screenshot Gallery & Modal
+========================= */
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.screenshot-gallery figure { margin: 0; text-align: center; }
+
+.screenshot-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.screenshot-gallery img:hover { transform: scale(1.05); }
+
+figcaption {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Modal for Screenshot Gallery */
+#imageModal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+#imageModal .modal-content {
+  max-width: 90%;
+  max-height: 80vh;      /* Portrait-safe */
+  object-fit: contain;    /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+#imageModal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1010;
+}
+#imageModal .close-btn:hover { color: #ffa500; }
+
+#imageModal #caption {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
