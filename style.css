@@ -143,8 +143,8 @@ nav {
 }
 
 .profile-img {
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   box-shadow: 0 0 20px #ffa500;
   transition: transform 0.3s, box-shadow 0.3s;
